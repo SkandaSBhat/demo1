@@ -1,0 +1,29 @@
+name: java & python build and deploy
+on:
+  push:
+    branches:
+      - main .
+  pull:
+    branches:
+      - main .
+jobs: null
+build:
+  runs-on: Ubuntu-latest
+  steps:
+    - uses: actions/checkout@v1
+    - name: Build & Push Image
+      run: >
+        echo "${{ secrets.DOCKERPW }}" | docker login -u "skandasbhat"
+        --password-stdin
+
+        docker image build -t skandasbhat/hello-java:latest .
+
+        docker push skandasbhat/hello-java:latest
+    - name: run Image
+      run: >
+        echo "${{ secrets.DOCKERPW }}" | docker login -u "skandasbhat"
+        --password-stdin
+
+        docker pull skandasbhat/hello-java-python:latest
+
+        docker run skandasbhat/hello-java-python:latest
