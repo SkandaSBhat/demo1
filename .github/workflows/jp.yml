@@ -1,5 +1,6 @@
 name: java & python build and deploy
-on:
+on: 
+  workflow_dispatch:
   push:
     branches:
       - main .
