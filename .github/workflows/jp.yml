@@ -3,13 +3,13 @@ on:
   push:
     branches:
       - main .
-  pull:
+  pull_request:
     branches:
       - main .
-jobs: null
-build:
-  runs-on: Ubuntu-latest
-  steps:
+jobs: 
+  build:
+    runs-on: Ubuntu-latest
+    steps:
     - uses: actions/checkout@v1
     - name: Build & Push Image
       run: >
