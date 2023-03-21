@@ -17,9 +17,9 @@ jobs:
         echo "${{ secrets.DOCKERPW }}" | docker login -u "skandasbhat"
         --password-stdin
 
-        docker image build -t skandasbhat/hello-java:latest .
+        docker image build -t skandasbhat/python:latest .
 
-        docker push skandasbhat/hello-java:latest
+        docker push skandasbhat/python:latest
     - name: run Image
       run: >
         echo "${{ secrets.DOCKERPW }}" | docker login -u "skandasbhat"
