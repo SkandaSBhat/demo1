@@ -25,6 +25,6 @@ jobs:
         echo "${{ secrets.DOCKERPW }}" | docker login -u "skandasbhat"
         --password-stdin
 
-        docker pull skandasbhat/java-python
+        docker pull skandasbhat/python:latest 
 
-        docker run skandasbhat/java-python
+        docker run skandasbhat/python:latest
