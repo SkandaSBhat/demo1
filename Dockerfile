@@ -1,4 +1,4 @@
 FROM python  
 COPY . /src  
-CMD ["python", "/src/index.py"]  
+CMD ["python", "/src/Hello.pyt"]  
 
