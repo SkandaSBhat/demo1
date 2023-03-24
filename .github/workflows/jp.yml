@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build & Push Image
-      run: >
+      run: |
         echo "${{ secrets.DOCKERPW }}" | docker login -u "skandasbhat"
         --password-stdin
 
@@ -21,7 +21,7 @@ jobs:
 
         docker push skandasbhat/python:latest
     - name: run Image
-      run: >
+      run: |
         echo "${{ secrets.DOCKERPW }}" | docker login -u "skandasbhat"
         --password-stdin
 
